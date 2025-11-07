@@ -5,4 +5,4 @@ Suspend/resume, webcam, sound, etc
 
 Thank you!!!
 
-(we're going to automate getting hardware to work 100% perfect, for now collecting configs)
+We're going to automate getting hardware to work 100% perfect, for now collecting configs -- this is like /usr/ports .. but for laptops, and so you know what to buy :)
