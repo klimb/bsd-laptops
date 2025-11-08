@@ -6,6 +6,6 @@
  'memory': '32 MB',
  'disk 1': '954G',
  'screen': '2160x1350',
- 'wifi cards': 'iwlwifi0',
+ 'wifi cards': 'rtwn1 rtwn0 iwlwifi0',
  'webcam works?': False,
  'rtl-sdr?': True}
