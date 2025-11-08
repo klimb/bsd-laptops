@@ -25,6 +25,8 @@ class FreeBSDLaptopCompatibilityReport:
         self.report["platform"] = {
             "processor": platform.processor(),
             "machine": platform.machine(),
+            "model":  (subprocess.run(["sysctl", "hw.model"], capture_output=True, text=True
+                                    ).stdout).split(":")[-1].replace("\n", ""),
             "cores": psutil.cpu_count(logical=False),
             "threads": psutil.cpu_count(logical=True),
             "kernel": (
