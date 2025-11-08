@@ -66,12 +66,18 @@ class FreeBSDLaptopCompatibilityReport:
                 ['dmesg'], capture_output=True, text=True).stdout.splitlines() if 'VT' in l), '')
         ).split(" ")[-1]
 
+    def check_wifi_cards(self):
+        self.report["wifi cards"] = subprocess.run(
+            ['sysctl', "net.wlan.devices"], capture_output=True, text=True
+            ).stdout.split(": ")[1].replace("\n", "")
+
     def run_checks(self):
         self.check_cpu()
         self.check_mem()
         self.check_disks()
         self.check_webcam()
         self.check_screen_resolution()
+        self.check_wifi_cards()
 
     def show_report(self):
         pp = pprint.PrettyPrinter(sort_dicts=False)
