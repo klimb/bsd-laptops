@@ -48,9 +48,13 @@ class FreeBSDLaptopCompatibilityReport:
             )
 
     def check_screen_resolution(self):
-        self.report["screen"] = (next((l for l in subprocess.run(
-                ['dmesg'], capture_output=True, text=True).stdout.splitlines() if 'VT' in l), '')
-        ).split(" ")[-1]
+        screen_resolution = (next(
+            (l for l in subprocess.run(['dmesg'], capture_output=True, text=True).stdout.splitlines() if
+             'VT' in l), '')).split(" ")[-1]
+        self.report["screen"] = {
+            "resolution": screen_resolution,
+            "comment": "sucks" if bool(int(screen_resolution.split("x")[0]) < 2048) else "doable"
+        }
 
     def check_wifi_cards(self):
         self.report["wifi cards"] = subprocess.run(
