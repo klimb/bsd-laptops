@@ -52,19 +52,14 @@ class FreeBSDLaptopCompatibilityReport:
 
         self.report["webcam works?"] = attempt_video_capture()
 
-    def check_disk(self):
-        disk_name = (
-            subprocess.run(["sysctl", "kern.disks"], capture_output=True, text=True)
-            .stdout.split(":")[1]
-            .replace("\n", "")
-            .strip()
-        )
-        disk_info = (subprocess.run(["diskinfo", "-s", disk_name], capture_output=True, text=True).stdout
-                     .replace("\n",""))
-        self.report["disk"] = {
-            'device': disk_name,
-            'model': disk_info
-        }
+    def check_disks(self):
+        disks = (subprocess.run(["sysctl", "kern.disks"], capture_output=True, text=True).stdout.split(":")[1]
+                 .replace("\n", "").strip().split(" "))
+        for i, disk in enumerate(disks):
+            self.report[f"disk {i+1}"] = (
+                (subprocess.run(["gpart", "show", disk], capture_output=True, text=True))
+                .stdout.splitlines()[0].split(" ")[-1].strip('()')
+            )
 
     def check_screen_resolution(self):
         self.report["screen"] = (next((l for l in subprocess.run(
@@ -74,7 +69,7 @@ class FreeBSDLaptopCompatibilityReport:
     def run_checks(self):
         self.check_cpu()
         self.check_mem()
-        self.check_disk()
+        self.check_disks()
         self.check_webcam()
         self.check_screen_resolution()
 
