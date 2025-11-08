@@ -8,7 +8,6 @@ import os
 import platform
 import pprint
 import subprocess
-from idlelib.pyshell import capture_warnings
 
 import psutil
 
