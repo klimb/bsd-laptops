@@ -1,0 +1,8 @@
+{'Platform': {'processor': 'amd64',
+              'machine': 'amd64',
+              'cores': 8,
+              'threads': 20,
+              'kernel': 'FreeBSD 14.3-RELEASE-p5 GENERIC'},
+ 'Memory': '32 MB',
+ 'Disk': {'device': 'nda0', 'model': '52QC73HJEJS6'},
+ 'Webcam Works?': False}
