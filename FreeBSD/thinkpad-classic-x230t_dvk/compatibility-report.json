@@ -6,7 +6,7 @@
               'kernel': 'FreeBSD 14.3-RELEASE-p5 GENERIC'},
  'memory': '16 MB',
  'disk 1': '3.6T',
- 'screen': {'resolution': '1366x768', 'comment': 'sucks'},
+ 'screen': {'max resolution': '1366x768', 'comment': 'sucks'},
  'wifi cards': 'rtwn1 rtwn0 iwn0',
- 'webcam works?': True,
+ 'webcam': {'max resolution': 'uxga', 'works?': True},
  'rtl-sdr?': True}
