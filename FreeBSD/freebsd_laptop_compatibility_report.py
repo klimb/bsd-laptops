@@ -67,7 +67,7 @@ class FreeBSDLaptopCompatibilityReport:
         }
 
     def check_screen_resolution(self):
-        self.report["screen"] = (next((l for l in __import__('subprocess').run(
+        self.report["screen"] = (next((l for l in subprocess.run(
                 ['dmesg'], capture_output=True, text=True).stdout.splitlines() if 'VT' in l), '')
         ).split(" ")[-1]
 
