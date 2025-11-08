@@ -1,0 +1,9 @@
+cheese
+drm-kmod
+gh
+gpu-firmware-intel-kmod-tigerlake
+i3
+pkg
+wifi-firmware-iwlwifi-kmod-22000
+xfce
+xorg
