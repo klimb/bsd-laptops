@@ -36,22 +36,6 @@ class FreeBSDLaptopCompatibilityReport:
     def check_mem(self):
         self.report["memory"] = f"{(psutil.virtual_memory().total / (1024 * 1024 * 1024)):.0f} MB"
 
-
-    def check_webcam(self):
-        def attempt_video_capture():
-            capture = cv2.VideoCapture(0)
-            if not capture.isOpened():
-                return False
-            else:
-                ret, frame = capture.read()
-                if ret:
-                    return True
-                else:
-                    capture.release()
-                    return False
-
-        self.report["webcam works?"] = attempt_video_capture()
-
     def check_disks(self):
         disks = (subprocess.run(["sysctl", "kern.disks"], capture_output=True, text=True).stdout.split(":")[1]
                  .replace("\n", "").strip().split(" "))
@@ -71,13 +55,33 @@ class FreeBSDLaptopCompatibilityReport:
             ['sysctl', "net.wlan.devices"], capture_output=True, text=True
             ).stdout.split(": ")[1].replace("\n", "")
 
+    def check_webcam(self):
+        def attempt_video_capture():
+            capture = cv2.VideoCapture(0)
+            if not capture.isOpened():
+                return False
+            else:
+                ret, frame = capture.read()
+                if ret:
+                    return True
+                else:
+                    capture.release()
+                    return False
+
+        self.report["webcam works?"] = attempt_video_capture()
+
+    def check_rtl_sdr(self):
+        self.report["rtl-sdr?"] = True if (next((x for x in subprocess.run(
+            ['dmesg'], capture_output=True, text=True).stdout.splitlines() if 'RTLSDR' in x), '')) else False
+
     def run_checks(self):
         self.check_cpu()
         self.check_mem()
         self.check_disks()
-        self.check_webcam()
         self.check_screen_resolution()
         self.check_wifi_cards()
+        self.check_webcam()
+        self.check_rtl_sdr()
 
     def show_report(self):
         pp = pprint.PrettyPrinter(sort_dicts=False)
