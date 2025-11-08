@@ -8,6 +8,7 @@ import os
 import platform
 import pprint
 import subprocess
+from idlelib.pyshell import capture_warnings
 
 import psutil
 
@@ -52,7 +53,7 @@ class FreeBSDLaptopCompatibilityReport:
             (l for l in subprocess.run(['dmesg'], capture_output=True, text=True).stdout.splitlines() if
              'VT' in l), '')).split(" ")[-1]
         self.report["screen"] = {
-            "resolution": screen_resolution,
+            "max resolution": screen_resolution,
             "comment": "sucks" if bool(int(screen_resolution.split("x")[0]) < 2048) else "doable"
         }
 
@@ -74,7 +75,12 @@ class FreeBSDLaptopCompatibilityReport:
                     capture.release()
                     return False
 
-        self.report["webcam works?"] = attempt_video_capture()
+        self.report["webcam"] = {
+            "max resolution" : subprocess
+               .run(['pwcview', "-h", "-s", "bogus"], capture_output=True, text=True)
+               .stderr.replace("\n","").split(", ")[-1],
+            "works?": attempt_video_capture()
+        }
 
     def check_rtl_sdr(self):
         self.report["rtl-sdr?"] = True if (next((x for x in subprocess.run(
