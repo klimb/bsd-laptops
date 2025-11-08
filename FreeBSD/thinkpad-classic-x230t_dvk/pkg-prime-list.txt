@@ -6,6 +6,7 @@ git
 gnome-backgrounds
 linux-brave
 pkg
+pwcview
 tor-browser
 xf86-input-evdev
 xf86-input-wacom
