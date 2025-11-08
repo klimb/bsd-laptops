@@ -22,7 +22,7 @@ class FreeBSDLaptopCompatibilityReport:
         self.report = dict()
 
     def check_cpu(self):
-        self.report["Platform"] = {
+        self.report["platform"] = {
             "processor": platform.processor(),
             "machine": platform.machine(),
             "cores": psutil.cpu_count(logical=False),
@@ -34,11 +34,8 @@ class FreeBSDLaptopCompatibilityReport:
         }
 
     def check_mem(self):
-        self.report["Memory"] = f"{(psutil.virtual_memory().total / (1024 * 1024 * 1024)):.0f} MB"
+        self.report["memory"] = f"{(psutil.virtual_memory().total / (1024 * 1024 * 1024)):.0f} MB"
 
-    def show_report(self):
-        pp = pprint.PrettyPrinter(sort_dicts=False)
-        pp.pprint(self.report)
 
     def check_webcam(self):
         def attempt_video_capture():
@@ -53,9 +50,9 @@ class FreeBSDLaptopCompatibilityReport:
                     capture.release()
                     return False
 
-        self.report["Webcam Works?"] = attempt_video_capture()
+        self.report["webcam works?"] = attempt_video_capture()
 
-    def check_disk_size(self):
+    def check_disk(self):
         disk_name = (
             subprocess.run(["sysctl", "kern.disks"], capture_output=True, text=True)
             .stdout.split(":")[1]
@@ -64,17 +61,26 @@ class FreeBSDLaptopCompatibilityReport:
         )
         disk_info = (subprocess.run(["diskinfo", "-s", disk_name], capture_output=True, text=True).stdout
                      .replace("\n",""))
-        self.report["Disk"] = {
+        self.report["disk"] = {
             'device': disk_name,
             'model': disk_info
         }
 
+    def check_screen_resolution(self):
+        self.report["screen"] = (next((l for l in __import__('subprocess').run(
+                ['dmesg'], capture_output=True, text=True).stdout.splitlines() if 'VT' in l), '')
+        ).split(" ")[-1]
+
     def run_checks(self):
         self.check_cpu()
         self.check_mem()
-        self.check_disk_size()
+        self.check_disk()
         self.check_webcam()
+        self.check_screen_resolution()
 
+    def show_report(self):
+        pp = pprint.PrettyPrinter(sort_dicts=False)
+        pp.pprint(self.report)
 
 if __name__ == "__main__":
     r = FreeBSDLaptopCompatibilityReport()
