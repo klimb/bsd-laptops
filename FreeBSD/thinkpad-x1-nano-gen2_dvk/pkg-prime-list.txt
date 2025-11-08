@@ -9,6 +9,7 @@ gh
 gnome-backgrounds
 gpu-firmware-intel-kmod-alderlake
 gpu-firmware-intel-kmod-tigerlake
+gqrx-qt5
 i3
 linux-brave
 lollypop
@@ -24,6 +25,7 @@ py311-pip
 py311-ply
 pycharm
 python
+rtl-sdr
 rust
 thunderbird
 tor-browser
