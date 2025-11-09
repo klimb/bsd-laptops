@@ -29,46 +29,51 @@ class FreeBSDLaptopCompatibilityReport:
         self.report = dict()
 
     def check_cpu(self):
-        self.report["platform"] = {
-            "processor": platform.processor(),
-            "machine": platform.machine(),
+        self.report["processor"] = {
+            "arch": platform.machine(),
             "model":  (subprocess.run(["sysctl", "hw.model"], capture_output=True, text=True
                                     ).stdout).split(":")[-1].replace("\n", ""),
             "cores": psutil.cpu_count(logical=False),
             "threads": psutil.cpu_count(logical=True),
-            "kernel": (
-                subprocess.run(["sysctl", "kern.version"], capture_output=True, text=True)
-                .stdout.split(":")[1].replace("\n", "").strip()
-            )
         }
+
+    def check_kernel_name(self):
+        self.report["kernel"] = (
+            subprocess.run(["sysctl", "kern.version"], capture_output=True, text=True)
+            .stdout.split(":")[1].replace("\n", "").strip()
+        )
 
     def check_mem(self):
         self.report["memory"] = f"{(psutil.virtual_memory().total / (1024 * 1024 * 1024)):.0f} MB"
 
     def check_disks(self):
         try:
+            drives = []
             disks = (subprocess.run(["sysctl", "kern.disks"], capture_output=True, text=True).stdout.split(":")[1]
                      .replace("\n", "").strip().split(" "))
             for i, disk in enumerate(disks):
-                self.report[f"disk {i+1} ({disk})"] = (
-                    (subprocess.run(["gpart", "show", disk], capture_output=True, text=True))
-                    .stdout.splitlines()[0].split(" ")[-1].strip('()')
-                )
+                drives.append({f"disk {i+1}":  {
+                    "size": (subprocess.run(["gpart", "show", disk], capture_output=True, text=True)).stdout.splitlines()[0].split(" ")[-1].strip('()'),
+                    "name": disk
+                }})
+            self.report["drives"] = drives
         except:
             pass
 
     def check_screen_resolution(self):
         monitor = screeninfo.get_monitors()[0]
         self.report[f"display"] = {
-            "max resolution": f"{monitor.width}x{monitor.height}",
-            "name": monitor.name
+            "resolution": f"{monitor.width}x{monitor.height}",
         }
 
     def check_wifi_cards(self):
-        self.report["wifi"] = subprocess.run(
-            ['sysctl', "net.wlan.devices"], capture_output=True, text=True
-            ).stdout.split(": ")[1].replace("\n", "")
-
+        proc_out = subprocess.run(['sysctl', "net.wlan.devices"], capture_output=True, text=True).stdout.split(": ")[
+            1].replace("\n", "")
+        cards = proc_out.split(" ")
+        networking = []
+        for i, card in enumerate(cards):
+            networking.append({f"wifi card {i}": card})
+        self.report["networking"] = networking
     def check_webcam(self):
         def attempt_video_capture():
             capture = cv2.VideoCapture(0)
@@ -113,7 +118,7 @@ class FreeBSDLaptopCompatibilityReport:
             output = result.stdout.strip()
             if 'smbios.system.family=' in output:
                 model_name = output.split('smbios.system.family=')[1].strip().replace('"', '')
-                self.report["laptop model"] = model_name.split("\n")[0]
+                self.report["laptop"] = model_name.split("\n")[0]
 
             else:
                 return "Model name not found using kenv."
@@ -123,6 +128,7 @@ class FreeBSDLaptopCompatibilityReport:
 
     def run_checks(self):
         self.check_laptop_model()
+        self.check_kernel_name()
         self.check_cpu()
         self.check_mem()
         self.check_disks()
