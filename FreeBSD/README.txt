@@ -5,7 +5,7 @@ Requires following packages:
 pkg install python opencv pwcview
 
 And python dependencies (pip is a package manager for python3):
-pip install opencv-python 
+pip install opencv-python psutil
 
 Sample output (for thinkpad-classic-x230t):
 {'platform': {'processor': 'amd64',
