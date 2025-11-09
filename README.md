@@ -1,4 +1,4 @@
-[## FreeBSD and OpenBSD on laptops!!!
+## FreeBSD and OpenBSD on laptops!!!
 
 
 Purpose: 
