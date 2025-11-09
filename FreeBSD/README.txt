@@ -1,22 +1,23 @@
 Usage:
 ./freebsd_laptop_compatibility_report.py
 
+Sample output (for thinkpad x1 nano gen2):
+{'platform': {'processor': 'amd64',
+              'machine': 'amd64',
+              'model': ' 12th Gen Intel(R) Core(TM) i7-1280P',
+              'cores': 8,
+              'threads': 20,
+              'kernel': 'FreeBSD 14.3-RELEASE-p5 GENERIC'},
+ 'memory': '32 MB',
+ 'disk 1': '920G',
+ 'disk 2': '954G',
+ 'screen': {'max resolution': '2160x1350', 'type': 'modern'},
+ 'wifi': 'rtwn1 rtwn0 iwlwifi0',
+ 'webcam': {'max resolution': 'uxga', 'works?': False},
+ 'rtl-sdr?': True}
+
 Requires following packages:
 pkg install python opencv pwcview
 
 And python dependencies (pip is a package manager for python3):
 pip install opencv-python psutil
-
-Sample output (for thinkpad-classic-x230t):
-{'platform': {'processor': 'amd64',
-              'machine': 'amd64',
-              'model': ' Intel(R) Core(TM) i5-3320M CPU @ 2.60GHz',
-              'cores': 2,
-              'threads': 4,
-              'kernel': 'FreeBSD 14.3-RELEASE-p5 GENERIC'},
- 'memory': '16 MB',
- 'disk 1': '3.6T',
- 'screen': {'max resolution': '1366x768', 'comment': 'sucks'},
- 'wifi cards': 'rtwn1 rtwn0 iwn0',
- 'webcam': {'max resolution': 'uxga', 'works?': True},
- 'rtl-sdr?': True}
