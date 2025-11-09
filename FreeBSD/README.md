@@ -1,8 +1,15 @@
+## FreeBSD running perfect on laptops!!!
+
+Please share a report for yours.
+
 Usage:
+```
 ./freebsd_laptop_compatibility_report.py
+```
 
 Sample output (for thinkpad x1 nano gen2):
 
+```
 {'laptop': 'ThinkPad X1 Nano Gen 2',
  'kernel': 'FreeBSD 14.3-RELEASE-p5 GENERIC',
  'processor': {'arch': 'amd64',
@@ -19,9 +26,15 @@ Sample output (for thinkpad x1 nano gen2):
  'webcam': {'max resolution': 'uxga', 'works?': False},
  'rtl-sdr?': True,
  'microphone': {'sample rate': 44100.0, 'works?': True}}
+```
 
 Requires following packages:
+```
 pkg install python opencv pwcview
+```
 
 And python dependencies (pip is a package manager for python3):
+
+```
 pip install opencv-python psutil screeninfo pyaudio
+```
