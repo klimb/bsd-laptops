@@ -1,6 +1,9 @@
 ## FreeBSD running perfect on laptops!!!
 
-Please share a report for yours.
+Please share a report for yours (by creating a folder structure for your laptop ^ here, by creating a pull request).
+Its going to be like /usr/ports but for laptops. 
+
+Fixing a particular problem / system tweak is a single point of change and we all benefit from it.
 
 Usage:
 ```
