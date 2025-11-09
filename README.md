@@ -16,7 +16,7 @@ cd bsd-laptops/FreeBSD
 ./freebsd_laptop_compatibility_report.py > compatibility-report.json
 dmesg > dmesg.txt
 ```
-Send me: dmesg.txt + compatibility-report.json (to dvk@klimb.com) .. or make a pull request (best)
+Send me: dmesg.txt + compatibility-report.json (to dvk@klimb.com) .. or make a pull request (best) and organize it similar to other laptops here.
 
 Thank you!!!
 
