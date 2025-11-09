@@ -20,4 +20,4 @@ Requires following packages:
 pkg install python opencv pwcview
 
 And python dependencies (pip is a package manager for python3):
-pip install opencv-python psutil
+pip install opencv-python psutil screeninfo

@@ -3,11 +3,18 @@
 # freebsd_laptop_compatibility_report.py 
 # quick and dirty device checker (webcam, etc)
 #
+# Design Goals:
+# - be able to run this after OS install, from console without needing X or Wayland
+# - try to get as much as possible from FreeBSD kernel (sysctl tree) and userland it ships with
+# - only take dependencies on python modules and other apps .. if you have to, otherwise the number of dependencies
+#   can get out of hand really quick
+#
 
 import os
 import platform
 import pprint
 import subprocess
+import screeninfo
 
 import psutil
 
@@ -39,21 +46,22 @@ class FreeBSDLaptopCompatibilityReport:
         self.report["memory"] = f"{(psutil.virtual_memory().total / (1024 * 1024 * 1024)):.0f} MB"
 
     def check_disks(self):
-        disks = (subprocess.run(["sysctl", "kern.disks"], capture_output=True, text=True).stdout.split(":")[1]
-                 .replace("\n", "").strip().split(" "))
-        for i, disk in enumerate(disks):
-            self.report[f"disk {i+1}"] = (
-                (subprocess.run(["gpart", "show", disk], capture_output=True, text=True))
-                .stdout.splitlines()[0].split(" ")[-1].strip('()')
-            )
+        try:
+            disks = (subprocess.run(["sysctl", "kern.disks"], capture_output=True, text=True).stdout.split(":")[1]
+                     .replace("\n", "").strip().split(" "))
+            for i, disk in enumerate(disks):
+                self.report[f"disk {i+1} ({disk})"] = (
+                    (subprocess.run(["gpart", "show", disk], capture_output=True, text=True))
+                    .stdout.splitlines()[0].split(" ")[-1].strip('()')
+                )
+        except:
+            pass
 
     def check_screen_resolution(self):
-        screen_resolution = (next(
-            (l for l in subprocess.run(['dmesg'], capture_output=True, text=True).stdout.splitlines() if
-             'VT' in l), '')).split(" ")[-1]
-        self.report["screen"] = {
-            "max resolution": screen_resolution,
-            "type": "vintage" if bool(int(screen_resolution.split("x")[0]) < 2048) else "modern"
+        monitor = screeninfo.get_monitors()[0]
+        self.report[f"display"] = {
+            "max resolution": f"{monitor.width}x{monitor.height}",
+            "name": monitor.name
         }
 
     def check_wifi_cards(self):
