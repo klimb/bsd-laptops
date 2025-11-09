@@ -3,7 +3,8 @@ Usage:
 
 Sample output (for thinkpad x1 nano gen2):
 
-{'platform': {'processor': 'amd64',
+{'laptop model': 'ThinkPad X1 Nano Gen 2',
+ 'platform': {'processor': 'amd64',
               'machine': 'amd64',
               'model': ' 12th Gen Intel(R) Core(TM) i7-1280P',
               'cores': 8,

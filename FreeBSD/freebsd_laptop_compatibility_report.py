@@ -106,7 +106,23 @@ class FreeBSDLaptopCompatibilityReport:
                 break
         p.terminate()
 
+    def check_laptop_model(self):
+        try:
+            result = subprocess.run(['kenv', '|', 'grep', 'smbios.system.family'], capture_output=True, text=True,
+                                    check=True, shell=True)
+            output = result.stdout.strip()
+            if 'smbios.system.family=' in output:
+                model_name = output.split('smbios.system.family=')[1].strip().replace('"', '')
+                self.report["laptop model"] = model_name.split("\n")[0]
+
+            else:
+                return "Model name not found using kenv."
+        except:
+            pass
+
+
     def run_checks(self):
+        self.check_laptop_model()
         self.check_cpu()
         self.check_mem()
         self.check_disks()
