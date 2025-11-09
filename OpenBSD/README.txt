@@ -1,6 +1,9 @@
 Usage: as root on OpenBSD (it doesn't let python do much lol)
 ./open_laptop_compatibility_report.py
 
+requires packages:
+pkg_add py3-ifaddr
+
 Sample output:
 {'platform': {'processor': 'amd64',
               'machine': 'amd64',

@@ -8,6 +8,7 @@ import os
 import platform
 import pprint
 import subprocess
+import ifaddr
 
 import psutil
 
@@ -16,8 +17,7 @@ os.environ["OPENCV_FFMPEG_DEBUG"] = 'false'
 os.environ['OPENCV_FFMPEG_LOGLEVEL'] = "0"
 import cv2
 
-
-class FreeBSDLaptopCompatibilityReport:
+class OpenBSDLaptopCompatibilityReport:
     def __init__(self):
         self.report = dict()
 
@@ -42,10 +42,11 @@ class FreeBSDLaptopCompatibilityReport:
         disks = subprocess.run(["sysctl", "hw.disknames"], capture_output=True, text=True).stdout.split("=")[1].strip().split(",")
         for i, disk in enumerate(disks):
             disk_name = disk.split(":")[0]
-            disk_out = (next(
-                (x for x in (subprocess.run(["disklabel", "-h", disk_name], capture_output=True, text=True)).stdout.splitlines() if
-                'total bytes: ' in x)))
-            self.report[f"disk {i+1}"] = disk_out.split(" ")[-1]
+            disk_size_gb = (next(
+                (x for x in
+                 (subprocess.run(["disklabel", "-h", disk_name], capture_output=True, text=True)).stdout.splitlines() if
+                 'total bytes: ' in x))).split(" ")[-1]
+            self.report[f"disk {i+1}"] = disk_size_gb
 
     def check_screen_resolution(self):
         screen_resolution = (next(
@@ -56,9 +57,7 @@ class FreeBSDLaptopCompatibilityReport:
         }
 
     def check_wifi_cards(self):
-        self.report["wifi cards"] = subprocess.run(
-            ['sysctl', "net.wlan.devices"], capture_output=True, text=True
-            ).stdout.split(": ")[1].replace("\n", "")
+        self.report["wifi"] = [adapter.nice_name for adapter in ifaddr.get_adapters() if adapter.nice_name != "lo0"]
 
     def check_webcam(self):
         def attempt_video_capture():
@@ -89,7 +88,7 @@ class FreeBSDLaptopCompatibilityReport:
         self.check_mem()
         self.check_disks()
         self.check_screen_resolution()
-        #self.check_wifi_cards()
+        self.check_wifi_cards()
         self.check_webcam()
         self.check_rtl_sdr()
 
@@ -98,6 +97,6 @@ class FreeBSDLaptopCompatibilityReport:
         pp.pprint(self.report)
 
 if __name__ == "__main__":
-    r = FreeBSDLaptopCompatibilityReport()
+    r = OpenBSDLaptopCompatibilityReport()
     r.run_checks()
     r.show_report()

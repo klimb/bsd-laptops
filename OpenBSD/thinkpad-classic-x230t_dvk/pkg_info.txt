@@ -29,6 +29,7 @@ epoll-shim-0.0.20240608 small epoll implementation using kqueue
 exo-4.20.0p0        Xfce4 extension library
 ffmpeg-6.1.3v1      audio/video converter and streamer
 ffmpegthumbnailer-2.2.2p0 lightweight video thumbnailer for file managers
+firefox-144.0.2     Firefox web browser
 flac-1.5.0          free lossless audio codec
 flite-2.2           text to speech utility
 fribidi-1.0.16p0    library implementing the Unicode Bidirectional Algorithm
@@ -151,6 +152,8 @@ nghttp2-1.67.1      library for HTTP/2
 nghttp3-1.12.0      implementation of HTTP/3
 ngtcp2-1.16.0       implementation of the RFC 9000 QUIC protocol
 npth-1.8            new GNU Portable Threads Library
+nspr-4.37           Netscape Portable Runtime
+nss-3.116           libraries to support development of security-enabled apps
 opencore-amr-0.1.6  implementation of the Adaptive Multi Rate speech codec
 opencv-4.12.0p2     library for computer vision real-time processing
 openjp2-2.5.4       open-source JPEG 2000 codec library
@@ -179,6 +182,7 @@ py3-cairo-1.28.0    cairo bindings for Python
 py3-charset-normalizer-3.4.3 character set detector library
 py3-cryptodome-3.23.0 self-contained cryptographic library for Python
 py3-gobject3-3.52.3p0 Python bindings for GLib and GObject
+py3-ifaddr-0.2.0p2  enumerate IP addresses on the local network adapters
 py3-mako-1.3.10p0   super-fast templating language
 py3-markdown-3.9    text-to-HTML conversion tool
 py3-more-itertools-10.7.0 routines for operating on iterables beyond itertools

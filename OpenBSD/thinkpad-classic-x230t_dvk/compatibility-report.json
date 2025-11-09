@@ -6,7 +6,7 @@
               'kernel': 'OpenBSD 7.8 GENERIC.MP#54'},
  'memory': '16 MB',
  'disk 1': '3726.0G',
- 'disk 2': '920.4G',
  'screen': {'max resolution': '1366x768'},
+ 'wifi': ['iwn0'],
  'webcam': {'max resolution': '1280x720', 'works?': True},
  'rtl-sdr?': True}
