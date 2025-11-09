@@ -5,8 +5,9 @@
               'threads': 20,
               'kernel': 'FreeBSD 14.3-RELEASE-p5 GENERIC'},
  'memory': '32 MB',
- 'disk 1': '954G',
- 'screen': {'max resolution': '2160x1350', 'comment': 'doable'},
- 'wifi cards': 'iwlwifi0',
+ 'disk 1': '920G',
+ 'disk 2': '954G',
+ 'screen': {'max resolution': '2160x1350', 'type': 'modern'},
+ 'wifi': 'rtwn1 rtwn0 iwlwifi0',
  'webcam': {'max resolution': 'uxga', 'works?': False},
- 'rtl-sdr?': False}
+ 'rtl-sdr?': True}

@@ -53,11 +53,11 @@ class FreeBSDLaptopCompatibilityReport:
              'VT' in l), '')).split(" ")[-1]
         self.report["screen"] = {
             "max resolution": screen_resolution,
-            "comment": "sucks" if bool(int(screen_resolution.split("x")[0]) < 2048) else "doable"
+            "type": "vintage" if bool(int(screen_resolution.split("x")[0]) < 2048) else "modern"
         }
 
     def check_wifi_cards(self):
-        self.report["wifi cards"] = subprocess.run(
+        self.report["wifi"] = subprocess.run(
             ['sysctl', "net.wlan.devices"], capture_output=True, text=True
             ).stdout.split(": ")[1].replace("\n", "")
 
