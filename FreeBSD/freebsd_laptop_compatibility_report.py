@@ -1,12 +1,11 @@
 #!/usr/bin/env python3
 #
 # freebsd_laptop_compatibility_report.py 
-# quick and dirty device checker (webcam, etc)
 #
 # Design Goals:
 # - be able to run this after OS install, from console without needing X or Wayland
 # - try to get as much as possible from FreeBSD kernel (sysctl tree) and userland it ships with
-# - only take dependencies on python modules and other apps .. if you have to, otherwise the number of dependencies
+# - only take dependencies on python modules and other apps if you have to, otherwise the number of dependencies
 #   can get out of hand really quick
 #
 
@@ -22,6 +21,7 @@ os.environ['OPENCV_LOG_LEVEL'] = 'OFF'
 os.environ["OPENCV_FFMPEG_DEBUG"] = 'false'
 os.environ['OPENCV_FFMPEG_LOGLEVEL'] = "0"
 import cv2
+import pyaudio
 
 
 class FreeBSDLaptopCompatibilityReport:
@@ -93,6 +93,19 @@ class FreeBSDLaptopCompatibilityReport:
         self.report["rtl-sdr?"] = True if (next((x for x in subprocess.run(
             ['dmesg'], capture_output=True, text=True).stdout.splitlines() if 'RTLSDR' in x), '')) else False
 
+    def check_mic(self):
+        p = pyaudio.PyAudio()
+        for i in range(p.get_device_count()):
+            device_info = p.get_device_info_by_index(i)
+            is_mic = device_info['maxInputChannels'] > 0
+            if is_mic:
+                self.report["microphone"] = {
+                    'sample rate': device_info['defaultSampleRate'],
+                    'works?' : True
+                }
+                break
+        p.terminate()
+
     def run_checks(self):
         self.check_cpu()
         self.check_mem()
@@ -101,6 +114,7 @@ class FreeBSDLaptopCompatibilityReport:
         self.check_wifi_cards()
         self.check_webcam()
         self.check_rtl_sdr()
+        self.check_mic()
 
     def show_report(self):
         pp = pprint.PrettyPrinter(sort_dicts=False)
