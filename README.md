@@ -1,4 +1,4 @@
-## FreeBSD and OpenBSD on laptops!!!
+[## FreeBSD and OpenBSD on laptops!!!
 
 
 Purpose: 
@@ -6,7 +6,17 @@ Purpose:
 * this is like /usr/ports .. but for laptops, and so you know what to buy :)
 * What is the best laptop for FreeBSD or OpenBSD? (run freebsd_laptop_compatibility_report.py (feel free to modify it) and submit your system)
 
-Friends, would you please share your system configs and dmesg (by making some commits here) so we can get all hardware working perfect on specific laptop models? Suspend/resume, webcam, audio, headphones, built-in & external mic, fingerprint reader, WIFI cards, etc. I'll make you admin/collaborator if you'd like to help out. Or just share it by email (dvk@klimb.com).
+Friends, would you please share your system configs and dmesg (by making some commits here) so we can get all hardware working perfect on specific laptop models? Suspend/resume, webcam, audio, headphones, built-in & external mic, fingerprint reader, WIFI cards, etc. I'll make you admin/collaborator if you'd like to help out. 
+
+```
+mkdir ~/src
+cd ~/src
+git clone https://github.com/klimb/bsd-laptops.git
+cd bsd-laptops/FreeBSD
+./freebsd_laptop_compatibility_report.py > compatibility-report.json
+dmesg > dmesg.txt
+```
+Send me: dmesg.txt + compatibility-report.json (to dvk@klimb.com) .. or make a pull request (best)
 
 Thank you!!!
 
@@ -21,3 +31,4 @@ Some related articles:
 
 Links:
 - [OpenBSD Laptops](https://jcs.org/openbsd-laptops)
+](url)
