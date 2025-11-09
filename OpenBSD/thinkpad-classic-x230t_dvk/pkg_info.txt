@@ -81,6 +81,8 @@ intel-firmware-20250812v0 microcode update binaries for Intel CPUs
 inteldrm-firmware-20250708 firmware binary images for inteldrm(4) driver
 iso-codes-4.18.0    lists of the country, language and currency iso names
 iwn-firmware-5.11p1 firmware binary images for iwn(4) driver
+javaPathHelper-2.4  helper script for launching java applications
+jdk-21.0.8.9.1v0    OpenJDK Software Development Kit v21.0.8+9-1
 jpeg-3.1.2v0        SIMD-accelerated JPEG codec replacement of libjpeg
 json-glib-1.10.8    JSON parser for GLib-based libraries and applications
 lame-3.100p2        lame ain't an MP3 encoder
@@ -163,6 +165,7 @@ p5-Regexp-IPv6-0.03p0 regular expression for IPv6 addresses
 p5-Time-TimeDate-2.33 library for parsing and formatting dates and times
 p5-URI-5.34p0       library to parse Uniform Resource Identifiers
 pango-1.56.4        library for layout and rendering of text
+pcre-8.45           perl-compatible regular expression library
 pcre2-10.44         perl-compatible regular expression library, version 2
 pinentry-1.3.2p0    PIN or passphrase entry dialog (ncurses interface)
 png-1.6.50          library for manipulating PNG images
@@ -182,11 +185,14 @@ py3-more-itertools-10.7.0 routines for operating on iterables beyond itertools
 py3-numpy-2.2.6p1   fast array and numeric programming library for Python
 py3-packaging-25.0  core utilities for Python packaging
 py3-pip-25.2        command-line tool for installing Python packages
+py3-psutil-7.0.0p0  library to retrieve system information and utilisation
 py3-setuptools-79.0.1v0 simplified packaging system for Python modules
 py3-wheel-0.46.1    reference implementation for Python's "wheel" package format
+pycharm-2025.2.2    Python IDE based on IntelliJ IDEA
 python-3.12.11      interpreted object-oriented programming language
 quirks-7.147        exceptions to pkg_add rules
 ristretto-0.13.4    Xfce4 lightweight image-viewer
+rtl-sdr-2.0.2       software to turn RTL2832U into an SDR
 sdl2-2.32.8         cross-platform multimedia library
 shared-mime-info-2.4p0 shared mime database for desktops
 soundtouch-2.3.3    tempo/pitch audio processing library
@@ -231,4 +237,5 @@ xz-5.8.1            library and tools for XZ and LZMA compressed files
 yelp-42.3           GNOME help browser
 yelp-xsl-42.4       XSLT stylesheets for yelp
 zimg-3.0.5          scaling, colorspace conversion, and dithering library
+zsh-5.9p1           Z shell, Bourne shell-compatible
 zstd-1.5.7p0        zstandard fast real-time compression algorithm
