@@ -31,4 +31,3 @@ Some related articles:
 
 Links:
 - [OpenBSD Laptops](https://jcs.org/openbsd-laptops)
-](url)
