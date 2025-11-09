@@ -13,4 +13,4 @@ Sample output:
  'disk 2': '920.4G',
  'screen': {'max resolution': '1366x768'},
  'webcam': {'max resolution': '1280x720', 'works?': True},
- 'rtl-sdr?': False}
+ 'rtl-sdr?': True}
