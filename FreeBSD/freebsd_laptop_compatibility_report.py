@@ -44,7 +44,7 @@ class FreeBSDLaptopCompatibilityReport:
         )
 
     def check_mem(self):
-        self.report["memory"] = f"{(psutil.virtual_memory().total / (1024 * 1024 * 1024)):.0f} MB"
+        self.report["memory"] = f"{(psutil.virtual_memory().total / (1024 * 1024 * 1024)):.0f} GB"
 
     def check_disks(self):
         try:
