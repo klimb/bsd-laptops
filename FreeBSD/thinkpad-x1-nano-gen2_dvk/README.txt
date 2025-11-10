@@ -6,7 +6,7 @@ everything works except webcam
               'cores': 8,
               'threads': 20,
               'kernel': 'FreeBSD 14.3-RELEASE-p5 GENERIC'},
- 'memory': '32 MB',
+ 'memory': '32 GB',
  'disk 1': '920G',
  'disk 2': '954G',
  'screen': {'max resolution': '2160x1350', 'type': 'modern'},
