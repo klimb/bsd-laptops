@@ -19,7 +19,7 @@ Sample output (for thinkpad x1 nano gen2):
                'model': ' 12th Gen Intel(R) Core(TM) i7-1280P',
                'cores': 8,
                'threads': 20},
- 'memory': '32 MB',
+ 'memory': '32 GB',
  'drives': [{'disk 1': {'size': '920G', 'name': 'da0'}},
             {'disk 2': {'size': '954G', 'name': 'nda0'}}],
  'display': {'resolution': '2160x1350'},
