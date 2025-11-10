@@ -1,0 +1,16 @@
+ttyv0   "/usr/libexec/getty Pc"         xterm   onifexists secure
+ttyv1   "/usr/libexec/getty Pc"         xterm   onifexists secure
+ttyv2   "/usr/libexec/getty Pc"         xterm   onifexists secure
+ttyv3   "/usr/libexec/getty Pc"         xterm   onifexists secure
+ttyv4   "/usr/libexec/getty Pc"         xterm   off secure
+ttyv5   "/usr/libexec/getty Pc"         xterm   off secure
+ttyv6   "/usr/libexec/getty Pc"         xterm   off secure
+ttyv7   "/usr/libexec/getty Pc"         xterm   off secure
+ttyv4   "/usr/local/bin/xdm -nodaemon"  xterm   off secure
+ttyu0   "/usr/libexec/getty 3wire"      vt100   onifconsole secure
+ttyu1   "/usr/libexec/getty 3wire"      vt100   onifconsole secure
+ttyu2   "/usr/libexec/getty 3wire"      vt100   onifconsole secure
+ttyu3   "/usr/libexec/getty 3wire"      vt100   onifconsole secure
+dcons   "/usr/libexec/getty std.9600"   vt100   off secure
+xc0     "/usr/libexec/getty Pc"         xterm   onifconsole secure
+rcons   "/usr/libexec/getty std.9600"   vt100   onifconsole secure
