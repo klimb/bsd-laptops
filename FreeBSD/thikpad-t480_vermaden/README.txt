@@ -1,1 +1,14 @@
 https://vermaden.wordpress.com/2022/04/14/freebsd-13-1-on-thinkpad-w520/
+
+{'laptop': 'ThinkPad T480',
+ 'kernel': 'FreeBSD 14.3-RELEASE-p3 GENERIC',
+ 'processor': {'arch': 'amd64',
+ 'model': ' Intel(R) Core(TM) i5-8250U CPU @ 1.60GHz',
+ 'cores': 4,
+ 'threads': 8},
+ 'memory': '32 MB',
+ 'display': {'resolution': '1920x1080'},
+ 'networking': [{'wifi card 0': 'iwlwifi0'}],
+ 'webcam': {'max resolution': 'uxga', 'works?': True},
+ 'rtl-sdr?': False,
+ 'microphone': {'sample rate': 44100.0, 'works?': True}}
