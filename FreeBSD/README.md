@@ -5,7 +5,7 @@ Its going to be like /usr/ports but for laptops.
 
 Fixing a particular problem / system tweak is a single point of change and we all benefit from it.
 
-Usage:
+Usage: this can be ran from a console and doesn't require X or Wayland to be running (the idea is to run it after you install FreeBSD and get stuff working)
 ```
 ./freebsd_laptop_compatibility_report.py
 ```
