@@ -36,7 +36,7 @@ cp /etc/rc.conf FreeBSD/some_laptop_model_you/etc
 # commit your changes to your forked repo
 cd ~/src/bsd-laptops
 git add .
-git commit -m "adding freebsd_your_laptop_model_you"
+git commit -m "adding your_laptop_model_you to FreeBSD"
 git push
 ```
 
