@@ -17,6 +17,7 @@ cd bsd-laptops/FreeBSD
 dmesg > dmesg.txt
 ```
 organize it like the other laptops here under FreeBSD or OpenBSD, and create a pull request
+
 laptop directory naming scheme: make_model_[YOUR_NAME]
 
 Thank you!!!
