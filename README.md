@@ -16,11 +16,14 @@ cd bsd-laptops/FreeBSD
 ./freebsd_laptop_compatibility_report.py > compatibility-report.json
 dmesg > dmesg.txt
 ```
-organize it like the other laptops here under FreeBSD or OpenBSD, and create a pull request
 
-laptop directory naming scheme: make_model_[YOUR_NAME]
+## how to add your laptop to this repo
 
-Thank you!!!
+* clone this repo
+* create a directory for your laptop using similar naming convention
+* copy your system files .. tweaks you had to do to get stuff working, organize it just like the OS does.
+* add your dmesg output and compatibility report. 
+* create a pull request
 
 We're going to automate getting hardware to work 100% perfect, but for now .. collecting system configs.
 
