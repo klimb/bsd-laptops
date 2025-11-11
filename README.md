@@ -50,7 +50,7 @@ git push
 # and click on "create pull request" on github website (in your forked repo)
 ```
 
-I know its a pain to work with git and github. But the laptop thing needs to be a repo (with proven configs, structured), not some webapp or write-ups. With verifiable reports. Laptops are expensive. 
+I know its a pain to work with git and github. But the laptop thing needs to be a repo (with proven configs, structured), not some webapp or write-ups. With verifiable reports. Laptops are expensive. Buy stuff that works for sure.
 
 Some related articles:
 - [FreeBSD on a thinkpad x230 tablet](https://www.linkedin.com/pulse/freebsd-thinkpad-x230t-dmitry-kalashnikov-3ya5c)
