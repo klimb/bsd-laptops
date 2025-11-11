@@ -13,6 +13,15 @@ Friends, would you please share your system configs and dmesg (by making some co
 
 ## how to add your laptop to this repo (FreeBSD example)
 Please read: [How to contribute to someone's repository](https://kbroman.org/github_tutorial/pages/fork.html)
+* fork this repo (click Fork ^ .. naming: "bsd-laptops-your-laptop-you")
+* clone your forked repo
+* add your laptop
+  * copy your system files .. tweaks you had to do to get stuff working, organize it just like the OS does.
+  * add your dmesg output + compatibility report. 
+  * write a little readme of what works to some_laptop_model_you/REAMDE.md
+* commit and push
+* On github website, go to your forked repo and click on "Create Pull Request" button
+
 
 ```
 # setup your forked repo
@@ -38,16 +47,8 @@ cd ~/src/bsd-laptops
 git add .
 git commit -m "adding your_laptop_model_you to FreeBSD"
 git push
+# and click on "create pull request" on github website (in your forked repo)
 ```
-
-* fork this repo (click Fork ^ .. naming: "bsd-laptops-your-laptop-you")
-* clone your forked repo
-* add your laptop
-  * copy your system files .. tweaks you had to do to get stuff working, organize it just like the OS does.
-  * add your dmesg output + compatibility report. 
-  * write a little readme of what works to some_laptop_model_you/REAMDE.md
-* commit and push
-* On github website, go to your forked repo and click on "Create Pull Request" button
 
 We're going to automate getting hardware to work 100% perfect, but for now .. collecting system configs. If you don't have all of the above ^ its ok, just keep making checkins. Push what you have.
 
