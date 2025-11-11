@@ -41,3 +41,5 @@ And python dependencies (pip is a package manager for python3):
 ```
 pip install opencv-python psutil screeninfo pyaudio
 ```
+
+If you want to add scripts and contribute to freebsd_laptop_compatibility_report.py that would be awesome!
