@@ -46,11 +46,11 @@ git push
 * add your laptop
   * copy your system files .. tweaks you had to do to get stuff working, organize it just like the OS does.
   * add your dmesg output + compatibility report. 
-  * write a little readme of what works to some_laptop_model_you/REAMDE.m
+  * write a little readme of what works to some_laptop_model_you/REAMDE.md
 * commit and push
 * On github website, go to your forked repo and click on "Create Pull Request" button
 
-We're going to automate getting hardware to work 100% perfect, but for now .. collecting system configs.
+We're going to automate getting hardware to work 100% perfect, but for now .. collecting system configs. If you don't have all of the above ^ its ok, just keep making checkins. Push what you have.
 
 Some related articles:
 - [FreeBSD on a thinkpad x230 tablet](https://www.linkedin.com/pulse/freebsd-thinkpad-x230t-dmitry-kalashnikov-3ya5c)
