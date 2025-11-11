@@ -1,9 +1,9 @@
 ## FreeBSD running perfect on laptops!!!
 
-Please share a report for yours (by creating a folder structure for your laptop ^ here, by creating a pull request).
+Please share yours (by creating a folder structure for your laptop)
 Its going to be like /usr/ports but for laptops. 
 
-Fixing a particular problem / system tweak is a single point of change and we all benefit from it.
+Fixing a particular problem / system tweak is a single point of change and we're all going to benefit from it.
 
 Usage: this can be ran from a console and doesn't require X or Wayland to be running (the idea is to run it after you install FreeBSD and get stuff working .. sharing your tweaks in a structured way)
 ```
