@@ -12,7 +12,7 @@ Purpose:
 Friends, would you please share your system configs and dmesg (by making some commits here) so we can get all hardware working perfect on specific laptop models? Suspend/resume, webcam, audio, headphones, built-in & external mic, fingerprint reader, WIFI cards, etc. I'll make you admin/collaborator if you'd like to help out. 
 
 ## how to add your laptop to this repo (FreeBSD example)
-[How to contribute to someone's repository](https://kbroman.org/github_tutorial/pages/fork.html)
+Please read: [How to contribute to someone's repository](https://kbroman.org/github_tutorial/pages/fork.html)
 
 ```
 # setup your forked repo
@@ -43,12 +43,12 @@ git push
 
 * fork this repo (click Fork ^ .. naming: "bsd-laptops-your-laptop-you")
 * clone your forked repo (git clone https://github.com/you/bsd-laptops-your-laptop-you.git)
-* create a directory for your laptop using similar naming convention as others here
-* copy your system files .. tweaks you had to do to get stuff working, organize it just like the OS does.
-* add your dmesg output + compatibility report. 
-* write a little readme of what works to some_laptop_model_you/REAMDE.md
+* create a directory for your laptop using similar naming convention as others here and populate it
+  * copy your system files .. tweaks you had to do to get stuff working, organize it just like the OS does.
+  * add your dmesg output + compatibility report. 
+  * write a little readme of what works to some_laptop_model_you/REAMDE.md
 * commit and push
-* On github website, go to your forked repo and click on"pull request"
+* On github website, go to your forked repo and click on "Create Pull Request" button
 
 We're going to automate getting hardware to work 100% perfect, but for now .. collecting system configs.
 
