@@ -12,12 +12,20 @@ Purpose:
 Friends, would you please share your system configs and dmesg (by making some commits here) so we can get all hardware working perfect on specific laptop models? Suspend/resume, webcam, audio, headphones, built-in & external mic, fingerprint reader, WIFI cards, etc. I'll make you admin/collaborator if you'd like to help out. 
 
 ## how to add your laptop to this repo (FreeBSD example)
+[How to contribute to someone's repository](https://kbroman.org/github_tutorial/pages/fork.html)
+
 ```
+# setup your forked repo
 mkdir ~/src
 cd ~/src
-git clone https://github.com/klimb/bsd-laptops.git
+git clone https://github.com/you/bsd-laptops-your-laptop-you.git
 
-cd bsd-laptops/FreeBSD
+cd bsd-laptops
+git remote add bsdlaptops git://github.com/klimb/bsd-laptops
+git remote -v
+
+# add your laptop
+cd FreeBSD
 mkdir some_laptop_model_you
 ./freebsd_laptop_compatibility_report.py > some_laptop_model_you/compatibility-report.json
 dmesg > some_laptop_model_you/dmesg.txt
@@ -25,14 +33,22 @@ dmesg > some_laptop_model_you/dmesg.txt
 mkdir some_laptop_model_you/etc
 cp /etc/rc.conf some_laptop_model_you/etc
 ...
+
+# commit your changes to your forked repo
+cd ~/src/bsd-laptops
+git add .
+git commit -m "adding bsd-laptops-your-laptop-you"
+git push
 ```
 
-* clone this repo
+* fork this repo (click Fork ^ .. naming: "bsd-laptops-your-laptop-you")
+* clone your forked repo (git clone https://github.com/you/bsd-laptops-your-laptop-you.git)
 * create a directory for your laptop using similar naming convention as others here
 * copy your system files .. tweaks you had to do to get stuff working, organize it just like the OS does.
 * add your dmesg output + compatibility report. 
-* write a little readme of what works to some_laptop_model_you/REAMDE.md 
-* create a pull request "adding some_laptop_model_you". [How to contribute to someone's repository](https://kbroman.org/github_tutorial/pages/fork.html)
+* write a little readme of what works to some_laptop_model_you/REAMDE.md
+* commit and push
+* On github website, go to your forked repo and click on"pull request"
 
 We're going to automate getting hardware to work 100% perfect, but for now .. collecting system configs.
 
