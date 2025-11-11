@@ -65,3 +65,4 @@ Links:
 - [FreeBSD Foundation Project Laptop Repo](https://github.com/FreeBSDFoundation/proj-laptop)
 
 PS. If you're running NetBSD please contribute :)
+![](https://www.netbsd.org/images/NetBSD-smaller-tb.png)
