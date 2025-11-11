@@ -17,7 +17,7 @@ Please read: [How to contribute to someone's repository](https://kbroman.org/git
 * add your laptop
   * copy your system files .. tweaks you had to do to get stuff working, organize it just like the OS does.
   * add your dmesg output + compatibility report. 
-  * write a little readme of what works to some_laptop_model_you/README.md
+  * write a little readme of what works to some_laptop_model_you/README.md (optional)
 * make sure you're not leaking any sensitive info (like wifi passwords if you're sharing /etc/wpa_supplicant.conf .. remove/redact them)
 * commit and push 
 * On github website, go to your forked repo and click on "Create Pull Request" button
