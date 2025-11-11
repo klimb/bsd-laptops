@@ -3,11 +3,10 @@
 
 ## FreeBSD and OpenBSD on laptops!!!
 
-
-Purpose: 
+Goals: 
 * to get all hardware working perfect on specific laptops
-* this is like /usr/ports .. but for laptops, and so you know what to buy :)
-* What is the best laptop for FreeBSD or OpenBSD? (run freebsd_laptop_compatibility_report.py (feel free to modify it) and submit your system)
+* this is like /usr/ports .. but for laptops, and so you know what to buy and what works for sure :)
+* What is the best laptop for FreeBSD or OpenBSD? run *_laptop_compatibility_report.py
 
 Friends, would you please share your system configs and dmesg (by making some commits here) so we can get all hardware working perfect on specific laptop models? Suspend/resume, webcam, audio, headphones, built-in & external mic, fingerprint reader, WIFI cards, etc. I'll make you admin/collaborator if you'd like to help out. 
 
@@ -51,7 +50,7 @@ git push
 # and click on "create pull request" on github website (in your forked repo)
 ```
 
-We're going to automate getting hardware to work 100% perfect, but for now .. collecting system configs. If you don't have all of the above ^ its ok, just keep making checkins. Push what you have.
+I know its a pain to work with git and github. But the laptop thing needs to be a repo, not some a webapp or write-ups.
 
 Some related articles:
 - [FreeBSD on a thinkpad x230 tablet](https://www.linkedin.com/pulse/freebsd-thinkpad-x230t-dmitry-kalashnikov-3ya5c)
