@@ -34,3 +34,4 @@ Some related articles:
 
 Links:
 - [OpenBSD Laptops](https://jcs.org/openbsd-laptops)
+- [FreeBSD Foundation Project Laptop Repo](https://github.com/FreeBSDFoundation/proj-laptop)
