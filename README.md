@@ -8,7 +8,7 @@ Goals:
 * this is like /usr/ports .. but for laptops, and so you know what to buy and what works for sure :)
 * What is the best laptop for FreeBSD or OpenBSD? run *_laptop_compatibility_report.py
 
-Friends, would you please share your system configs and dmesg (by making some commits here) so we can get all hardware working perfect on specific laptop models? Suspend/resume, webcam, audio, headphones, built-in & external mic, fingerprint reader, WIFI cards, etc. I'll make you admin/collaborator if you'd like to help out. 
+Friends, would you please share your system configs and dmesg (by making some commits here) so we can get all hardware working perfect on specific laptop models? Suspend/resume, webcam, audio, headphones, built-in & external mic, fingerprint reader, WIFI cards, etc. I'll make you admin/collaborator if you'd like to help out. Ideally, a laptop would be just an empty directory. But its not the case in 2025.
 
 ## how to add your laptop to this repo (FreeBSD example)
 Please read: [How to contribute to someone's repository](https://kbroman.org/github_tutorial/pages/fork.html)
