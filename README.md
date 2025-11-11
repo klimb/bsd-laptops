@@ -13,6 +13,7 @@ Friends, would you please share your system configs and dmesg (by making some co
 mkdir ~/src
 cd ~/src
 git clone https://github.com/klimb/bsd-laptops.git
+
 cd bsd-laptops/FreeBSD
 mkdir some_laptop_model_you
 ./freebsd_laptop_compatibility_report.py > some_laptop_model_you/compatibility-report.json
