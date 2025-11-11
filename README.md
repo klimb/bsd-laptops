@@ -8,21 +8,28 @@ Purpose:
 
 Friends, would you please share your system configs and dmesg (by making some commits here) so we can get all hardware working perfect on specific laptop models? Suspend/resume, webcam, audio, headphones, built-in & external mic, fingerprint reader, WIFI cards, etc. I'll make you admin/collaborator if you'd like to help out. 
 
+## how to add your laptop to this repo (FreeBSD example)
 ```
 mkdir ~/src
 cd ~/src
 git clone https://github.com/klimb/bsd-laptops.git
 cd bsd-laptops/FreeBSD
-./freebsd_laptop_compatibility_report.py > compatibility-report.json
-dmesg > dmesg.txt
+mkdir some_laptop_model_you
+./freebsd_laptop_compatibility_report.py > some_laptop_model_you/compatibility-report.json
+dmesg > some_laptop_model_you/dmesg.txt
+
+mkdir some_laptop_model_you/etc
+cp /etc/rc.conf some_laptop_model_you/etc
+...
+
+git commit -m "adding some_laptop_model_you"
+
 ```
 
-## how to add your laptop to this repo
-
 * clone this repo
-* create a directory for your laptop using similar naming convention
+* create a directory for your laptop using similar naming convention as others here
 * copy your system files .. tweaks you had to do to get stuff working, organize it just like the OS does.
-* add your dmesg output and compatibility report. 
+* add your dmesg output + compatibility report. 
 * create a pull request
 
 We're going to automate getting hardware to work 100% perfect, but for now .. collecting system configs.
