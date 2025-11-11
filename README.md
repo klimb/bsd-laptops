@@ -14,7 +14,7 @@ Friends, would you please share your system configs and dmesg (by making some co
 ## how to add your laptop to this repo (FreeBSD example)
 Please read: [How to contribute to someone's repository](https://kbroman.org/github_tutorial/pages/fork.html)
 * fork this repo (click Fork ^ .. naming: "bsd-laptops-your-laptop-you")
-* clone your forked repo
+* clone your forked repo to your computer
 * add your laptop
   * copy your system files .. tweaks you had to do to get stuff working, organize it just like the OS does.
   * add your dmesg output + compatibility report. 
