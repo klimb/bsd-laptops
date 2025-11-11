@@ -1,3 +1,6 @@
+![](https://www.freebsd.org/images/banner-red.png)
+![](https://www.openbsd.org/images/puffy78.gif)
+
 ## FreeBSD and OpenBSD on laptops!!!
 
 
