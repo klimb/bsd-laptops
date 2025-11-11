@@ -24,14 +24,13 @@ cd bsd-laptops
 git remote add bsdlaptops git://github.com/klimb/bsd-laptops
 git remote -v
 
-# add your laptop
-cd FreeBSD
-mkdir some_laptop_model_you
-./freebsd_laptop_compatibility_report.py > some_laptop_model_you/compatibility-report.json
-dmesg > some_laptop_model_you/dmesg.txt
+# add your laptop to FreeBSD directory
+mkdir FreeBSD/some_laptop_model_you
+./freebsd_laptop_compatibility_report.py > FreeBSD/some_laptop_model_you/compatibility-report.json
+dmesg > FreeBSD/some_laptop_model_you/dmesg.txt
 
-mkdir some_laptop_model_you/etc
-cp /etc/rc.conf some_laptop_model_you/etc
+mkdir FreeBSD/some_laptop_model_you/etc
+cp /etc/rc.conf FreeBSD/some_laptop_model_you/etc
 ...
 
 # commit your changes to your forked repo
