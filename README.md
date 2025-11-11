@@ -32,7 +32,7 @@ cp /etc/rc.conf some_laptop_model_you/etc
 * copy your system files .. tweaks you had to do to get stuff working, organize it just like the OS does.
 * add your dmesg output + compatibility report. 
 * write a little readme of what works to some_laptop_model_you/REAMDE.md 
-* create a pull request "adding some_laptop_model_you" ([how to create a pull request on github](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request))
+* create a pull request "adding some_laptop_model_you". [How to contribute to someone's repository](https://kbroman.org/github_tutorial/pages/fork.html)
 
 We're going to automate getting hardware to work 100% perfect, but for now .. collecting system configs.
 
