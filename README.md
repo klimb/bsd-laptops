@@ -31,6 +31,7 @@ git commit -m "adding some_laptop_model_you"
 * create a directory for your laptop using similar naming convention as others here
 * copy your system files .. tweaks you had to do to get stuff working, organize it just like the OS does.
 * add your dmesg output + compatibility report. 
+* write a little readme of what works to some_laptop_model_you/REAMDE.md 
 * create a pull request
 
 We're going to automate getting hardware to work 100% perfect, but for now .. collecting system configs.
