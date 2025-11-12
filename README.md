@@ -8,7 +8,7 @@ Goals:
 * this is like /usr/ports .. but for laptops, and so you know what to buy and what works for sure :)
 * What is the best laptop for FreeBSD or OpenBSD? Once we get about 20 laptops here, I'll make a thing that generates an aggregated report and ranks laptops by different criteria (compatibility, screen, overall performance, etc). We (FreeBSD) don't need to create static webpages and maintain wikis for that. Lets automate it from real data. And spit out an interactive report.
 * The other major goal is to collect verbose dmessages and anything else that can be used to help **kernel** developers fix hardware problems, in an automated way.
-* Another major goal is to have scripts that fix easy stuff like device hints .. until its actually fixed at OS level.
+* Another major goal is to have scripts that fix easy stuff like device hints .. until its actually fixed at kernel level.
 
 Friends, would you please share your system configs and dmesg (by making some commits here) so we can get all hardware working perfect on specific laptop models? Suspend/resume, webcam, audio, headphones, built-in & external mic, fingerprint reader, WIFI cards, etc. I'll make you admin/collaborator if you'd like to help out. Ideally, a laptop would be just an empty directory. But its not the case in 2025.
 
