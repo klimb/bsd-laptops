@@ -1,8 +1,8 @@
-Usage: as root on OpenBSD (it doesn't let python do much lol)
+Usage:
 ./open_laptop_compatibility_report.py
 
 requires packages:
-pkg_add py3-ifaddr
+pkg_add py3-ifaddr py3-psutil
 
 Sample output:
 {'platform': {'processor': 'amd64',
@@ -12,8 +12,9 @@ Sample output:
               'threads': 4,
               'kernel': 'OpenBSD 7.8 GENERIC.MP#54'},
  'memory': '16 MB',
- 'disk 1': '3726.0G',
- 'disk 2': '920.4G',
+ 'size of mount point /': '0.96 GB',
  'screen': {'max resolution': '1366x768'},
+ 'wifi': ['iwn0'],
  'webcam': {'max resolution': '1280x720', 'works?': True},
- 'rtl-sdr?': True}
+ 'rtl-sdr?': False}
+

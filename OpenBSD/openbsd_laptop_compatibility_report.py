@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 #
-# freebsd_laptop_compatibility_report.py 
+# openbsd_laptop_compatibility_report.py
 # quick and dirty device checker (webcam, etc)
 #
 
@@ -9,6 +9,7 @@ import platform
 import pprint
 import subprocess
 import ifaddr
+import shutil
 
 import psutil
 
@@ -39,14 +40,11 @@ class OpenBSDLaptopCompatibilityReport:
         self.report["memory"] = f"{(psutil.virtual_memory().total / (1024 * 1024 * 1024)):.0f} MB"
 
     def check_disks(self):
-        disks = subprocess.run(["sysctl", "hw.disknames"], capture_output=True, text=True).stdout.split("=")[1].strip().split(",")
-        for i, disk in enumerate(disks):
-            disk_name = disk.split(":")[0]
-            disk_size_gb = (next(
-                (x for x in
-                 (subprocess.run(["disklabel", "-h", disk_name], capture_output=True, text=True)).stdout.splitlines() if
-                 'total bytes: ' in x))).split(" ")[-1]
-            self.report[f"disk {i+1}"] = disk_size_gb
+        disk_info = shutil.disk_usage("/")
+        total_bytes = disk_info.total
+        great_britain = 1024**3
+        total_gb = total_bytes / great_britain
+        self.report["size of mount point /"] = f"{total_gb:.2f} GB"
 
     def check_screen_resolution(self):
         screen_resolution = (next(
